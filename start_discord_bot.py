@@ -12,7 +12,7 @@ def main():
                        case_insensitive=True,
                        description=BOT_DESC)
 
-    extensions = ['luha_bot.luha_commands']
+    extensions = ['luha_bot.luha_commands', 'oreho_bot.oreho_commands']
 
     @bot.event
     async def on_ready():
