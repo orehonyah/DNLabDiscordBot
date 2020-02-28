@@ -8,6 +8,7 @@ DNLab Discord Bot
 - Rock-Paper-Scissors
 - Tarot fortune telling
 - Chungnam National University student restaurant menu crawler
+- Corona
 
 ## TODO
 - Food menu
