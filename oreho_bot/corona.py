@@ -6,7 +6,9 @@ class Corona(object):
 
     @staticmethod
     def corona(ctx, args=()):
-        speech = '{0.author.mention} \n' + Corona.corona_kr() + '\n'+Corona.corona_daejeon()
+        speech = Corona.corona_kr() + '\n'+Corona.corona_daejeon()
+        if ctx is not None:
+            speech = '{0.author.mention} \n'+speech
         return speech.format(ctx)
     
     # 전국환자
@@ -24,3 +26,6 @@ class Corona(object):
         soup = BeautifulSoup(res.text, 'html.parser')
         sickpeople = soup.select('#contBox > div:nth-child(2) > div > ul > li.tab-1 > div.txt > strong')
         return "대전광역시 확진자 : "+str(sickpeople[0].contents[0])+" 명"
+
+if __name__ == '__main__':
+    print(Corona.corona(None, None))
